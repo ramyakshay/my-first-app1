@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="css/styles.css">
+<script>
+    var questions = ["what is heap","100% abstract","this is a loop"];
+    var options = ["memory,stack,queue,none","lokesh,ako,interface,none","for,if,else,none"];
+    var correct = ['1','3','1'];
+    var qno=0;
+    var score = 0;
+    function display() {
+       // alert("i am lokesh");
+        if( qno < questions.length){
+       document.getElementById("que").innerHTML=questions[qno];
+       document.getElementById("btn").innerHTML="NEXT";
+       var answers = options[qno].split(",");
+       document.getElementById("opt1").innerHTML=answers[0];
+       document.getElementById("opt2").innerHTML=answers[1];
+       document.getElementById("opt3").innerHTML=answers[2];
+       document.getElementById("opt4").innerHTML=answers[3];
+       qno++;
+   }
+   else{
+       alert("test finished");
+   }
+   }
+   function test(x) 
+   {
+       //alert(x);
+       var q = qno-1;
+       
+       if (correct[q]==x )
+       {
+           score++;
+          document.getElementById("score").innerHTML = score;
+          
+       }
+   
+
+   }
+    </script>
+         <div id="score" class="scoreDiv">
+           
+    </div>
+ 
+<div id="que" class = "queDiv" >
+    
+</div>
+    <div id="opt1" onclick="test('1')" class="optDiv">
+    
+</div>
+    <div id="opt2" onclick="test('2')" class="optDiv">
+    
+</div>
+<div id="opt3" onclick="test('3')" class="optDiv">
+</div>
+<div id="opt4" onclick="test('4')" class="optDiv">
+    
+</div>
+    <button id ="btn" onclick="display()">START</button>
+    </html>
